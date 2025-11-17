@@ -1,0 +1,56 @@
+:root{
+--gap:16px;
+--max-width:1200px;
+--thumb-height:180px; /* change this to control thumbnail height */
+}
+*{box-sizing:border-box}
+body{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; color:#111}
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:1px solid #eee}
+.main-nav a{margin-left:12px;text-decoration:none;color:inherit}
+.main-nav a.active{font-weight:700}
+.page-content{max-width:var(--max-width);margin:24px auto;padding:0 16px}
+
+
+/* Gallery grid */
+.gallery{display:grid;gap:var(--gap);grid-template-columns:repeat(auto-fill,minmax(180px,1fr));align-items:start}
+.gallery-item{display:block;overflow:hidden;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.08)}
+
+
+/* Thumbnail image: fixed box, cropped using object-fit */
+.gallery-item img{width:100%;height:var(--thumb-height);max-height:var(--thumb-height);display:block;object-fit:cover;transition:transform .35s ease}
+.gallery-item:hover img{transform:scale(1.05)}
+
+
+/* For situations where you prefer the image to keep its aspect ratio (no crop), add the .preserve class on the <img> */
+.gallery-item img.preserve{height:auto;max-height:300px}
+
+
+/* Make the grid denser on small screens */
+@media (max-width:480px){
+:root{--thumb-height:140px}
+.gallery{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
+}
+
+
+/* Lightbox (CSS-only) - hidden by default; shown when :target matches */
+.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.85);padding:20px}
+.lightbox:target{display:flex}
+/* ensure the large image fits the viewport */
+.lightbox img{max-width:90vw;max-height:90vh;object-fit:contain}
+.lightbox-close{position:fixed;right:20px;top:20px;color:#fff;font-size:34px;text-decoration:none}
+
+
+/* Accessibility helper: when a target is opened, prevent page scroll on some browsers (best-effort) */
+:target{outline:none}
+
+
+/* Small niceties */
+.intro{margin-bottom:12px}
+footer{padding:12px 20px;border-top:1px solid #eee;text-align:center;margin-top:40px}
+
+
+/* Utility notes (kept here for quick tweaks):
+- Change --thumb-height to make thumbnails smaller/larger.
+- Use <img class="preserve"> if you want the image to keep its full aspect ratio in the grid.
+- For best performance, create real thumbnail files (e.g. photo1-thumb.jpg) and use them in the grid while keeping full-res images for the lightbox.
+*/

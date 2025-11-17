@@ -1,0 +1,123 @@
+<!-- ===== photos.html ===== -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Photography — Gallery</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+<h1>Photography</h1>
+<nav class="main-nav">
+<a href="index.html">Home</a>
+<a href="photos.html" class="active">Photography</a>
+</nav>
+</header>
+
+
+<main class="page-content gallery-page">
+<p class="intro">A simple responsive grid. Click images to enlarge.</p>
+
+
+<section class="gallery" aria-label="Photography gallery">
+<!-- Each item is an anchor so we can open a lightbox-like view using :target -->
+<a class="gallery-item" href="#img1">
+<img src="images/me.jpg" alt="Description 1" loading="lazy">
+</a>
+
+
+<a class="gallery-item" href="#img2">
+<img src="images/mountain.jpg" alt="Description 2" loading="lazy">
+</a>
+
+
+<a class="gallery-item" href="#img3">
+<img src="images/waterfall.jpg" alt="Description 3" loading="lazy">
+</a>
+
+
+<a class="gallery-item" href="#img4">
+<img src="images/Solitude.jpg" alt="Description 4" loading="lazy">
+</a>
+
+
+<a class="gallery-item" href="#img5">
+<img src="images/godly.jpg" alt="Description 5" loading="lazy">
+</a>
+
+
+<a class="gallery-item" href="#img6">
+<img src="images/Fork.jpg" alt="Description 6" loading="lazy">
+</a>
+
+
+<a class="gallery-item" href="#img7">
+<img src="images/BP.jpg" alt="Description 7" loading="lazy">
+</a>
+
+
+<a class="gallery-item" href="#img8">
+<img src="images/photo8.jpg" alt="Description 8" loading="lazy">
+</a>
+</section>
+
+
+<!-- Lightbox targets (one per image). Clicking the overlay or the close link returns to the gallery -->
+<div id="img1" class="lightbox">
+<a href="#gallery" class="lightbox-close" aria-label="Close">×</a>
+<img src="images/me.jpg" alt="Description 1">
+</div>
+
+
+<div id="img2" class="lightbox">
+<a href="#gallery" class="lightbox-close" aria-label="Close">×</a>
+<img src="images/mountain.jpg" alt="Description 2">
+</div>
+
+
+<div id="img3" class="lightbox">
+<a href="#gallery" class="lightbox-close" aria-label="Close">×</a>
+<img src="images/waterfall.jpg" alt="Description 3">
+</div>
+
+
+<div id="img4" class="lightbox">
+<a href="#gallery" class="lightbox-close" aria-label="Close">×</a>
+<img src="images/Solitude.jpg" alt="Description 4">
+</div>
+
+
+<div id="img5" class="lightbox">
+<a href="#gallery" class="lightbox-close" aria-label="Close">×</a>
+<img src="images/godly.jpg" alt="Description 5">
+</div>
+
+
+<div id="img6" class="lightbox">
+<a href="#gallery" class="lightbox-close" aria-label="Close">×</a>
+<img src="images/Fork.jpg" alt="Description 6">
+</div>
+
+
+<div id="img7" class="lightbox">
+<a href="#gallery" class="lightbox-close" aria-label="Close">×</a>
+<img src="images/BP.jpg" alt="Description 7">
+</div>
+
+
+<div id="img8" class="lightbox">
+<a href="#gallery" class="lightbox-close" aria-label="Close">×</a>
+<img src="images/photo8.jpg" alt="Description 8">
+</div>
+
+
+</main>
+
+
+<footer>
+<small>© Your Name</small>
+</footer>
+</body>
+</html>
